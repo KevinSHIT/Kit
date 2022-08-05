@@ -30,12 +30,15 @@ func main() {
 			act = Imple.Factory(Imple.ForcePushModule)
 		case "m":
 			act = Imple.Factory(Imple.MergeModule)
+		case "cp":
+			act = Imple.Factory(Imple.CherryPickModule)
 		case "i", "new":
 			PrintModuleName("Init")
 			Imple.Init(args)
 		case "acp":
 			PrintModuleName("Acp")
 			Imple.Acp(args)
+
 		default:
 			args = Utils.Prepend(actArg, args)
 			act = Imple.Factory(Imple.BaseModule)
