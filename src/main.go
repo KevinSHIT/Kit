@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/KevinZonda/Kit/src/Imple"
 	"github.com/KevinZonda/Kit/src/Interfaces"
+	"github.com/KevinZonda/Kit/src/Utils"
 	"os"
 	"strings"
 )
@@ -11,6 +12,10 @@ import (
 func main() {
 	args := os.Args[1:]
 	var act Interfaces.IAction = nil
+	// Magic Code, will cause KIS says I am shit
+	// for _, v := range args {
+	//	fmt.Printf("%s ", v)
+	//}
 	if len(args) == 0 {
 		act = Imple.Factory(Imple.BaseModule)
 	} else {
@@ -32,6 +37,7 @@ func main() {
 			PrintModuleName("Acp")
 			Imple.Acp(args)
 		default:
+			args = Utils.Prepend(actArg, args)
 			act = Imple.Factory(Imple.BaseModule)
 		}
 	}
