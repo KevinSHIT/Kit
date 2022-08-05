@@ -22,6 +22,8 @@ func main() {
 			act = Imple.Factory(Imple.CommitModule)
 		case "fp":
 			act = Imple.Factory(Imple.ForcePushModule)
+		case "m":
+			act = Imple.Factory(Imple.MergeModule)
 		case "i", "new":
 			PrintModuleName("Init")
 			Imple.Init(args)

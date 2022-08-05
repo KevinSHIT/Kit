@@ -9,6 +9,7 @@ const (
 	PushModule
 	CommitModule
 	ForcePushModule
+	MergeModule
 )
 
 func Factory(m ModuleType) Interfaces.IAction {
@@ -21,6 +22,8 @@ func Factory(m ModuleType) Interfaces.IAction {
 		return NewCommit()
 	case ForcePushModule:
 		return NewForcePush()
+	case MergeModule:
+		return NewMerge()
 	}
 	return nil
 }
