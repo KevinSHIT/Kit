@@ -28,6 +28,8 @@ func main() {
 			act = Imple.Factory(Imple.CommitModule)
 		case "fp":
 			act = Imple.Factory(Imple.ForcePushModule)
+		case "f":
+			act = Imple.Factory(Imple.FetchModule)
 		case "m":
 			act = Imple.Factory(Imple.MergeModule)
 		case "cp":
