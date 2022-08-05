@@ -11,6 +11,8 @@ const (
 	ForcePushModule
 	MergeModule
 	CherryPickModule
+	PullModule
+	FetchModule
 )
 
 func Factory(m ModuleType) Interfaces.IAction {
@@ -27,6 +29,10 @@ func Factory(m ModuleType) Interfaces.IAction {
 		return NewMerge()
 	case CherryPickModule:
 		return NewCherryPick()
+	case PullModule:
+		return NewPull()
+	case FetchModule:
+		return NewFetch()
 	}
 	return nil
 }

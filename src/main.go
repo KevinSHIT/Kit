@@ -32,6 +32,8 @@ func main() {
 			act = Imple.Factory(Imple.MergeModule)
 		case "cp":
 			act = Imple.Factory(Imple.CherryPickModule)
+		case "pl":
+			act = Imple.Factory(Imple.PullModule)
 		case "i", "new":
 			PrintModuleName("Init")
 			Imple.Init(args)
